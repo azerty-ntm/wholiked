@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Qui a liké ça ? - Multiplayer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎵 Qui a liké ça ? - Multiplayer</h1>
+        
+        <div class="setup-section">
+            <div class="setup-title">📋 Configuration du jeu</div>
+            <div id="peopleList"></div>
+            <div class="file-input-container">
+                <input type="file" id="newPersonFile" class="file-input" accept=".json">
+                <label for="newPersonFile" class="file-label">📁 Ajouter un fichier JSON</label>
+                <input type="text" id="personName" class="person-name-input" placeholder="Nom de la personne">
+                <button id="addPersonBtn" class="add-person-btn">➕ Ajouter</button>
+            </div>
+            <div id="setupStatus"></div>
+        </div>
+
+        <div class="game-section" id="gameSection">
+            <div class="game-controls">
+                <button id="startGameBtn" class="start-game-btn" disabled>🎮 Commencer le jeu</button>
+            </div>
+            <div id="questionContainer" class="question-container">
+                <div id="dateDisplay" class="date-display"></div>
+                <a id="videoLink" class="video-link" target="_blank">🎬 Voir la vidéo TikTok</a>
+                <div class="options-container" id="optionsContainer"></div>
+                <div id="resultDisplay" class="result-display"></div>
+                <button id="nextQuestionBtn" class="next-question-btn" style="display: none;">➡️ Question suivante</button>
+            </div>
+        </div>
+    </div>
+    <!-- Ajoute dans public/index.html -->
+<div id="login">
+  <input id="pseudo" placeholder="Votre pseudo" />
+  <input id="roomCode" placeholder="Code de la salle (6 chiffres)" maxlength="6" />
+  <button id="joinBtn">Rejoindre</button>
+  <button id="createBtn">Créer une salle</button>
+</div>
+<div id="game" style="display:none;">
+  <!-- Le reste du jeu -->
+</div>
+    <div id="scoreDisplay" class="score-display">Score: <span id="score">0</span>/<span id="total">0</span></div>
+
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
