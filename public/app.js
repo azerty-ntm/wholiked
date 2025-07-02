@@ -84,7 +84,7 @@ nextQuestionBtn.addEventListener('click', () => {
     socket.emit('nextQuestion');
 });
 // Ajoute dans public/app.js
-const socket = io();
+const socket = io("https://wholiked.onrender.com/");
 
 document.getElementById('joinBtn').onclick = () => {
     const pseudo = document.getElementById('pseudo').value;
